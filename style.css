@@ -1,31 +1,49 @@
+
+
+.borda {
+  position: fixed;      
+  top: 0;
+  left: 0;
+  width: 100vw;         
+  height: 100vh;        
+  box-sizing: border-box; 
+  border: 5px solid #FF0000; 
+  pointer-events: none; 
+  z-index: 9999;        
+  animation: rainbow 10s ease-in-out infinite;
+
+}
+@keyframes rainbow {
+  0%   { border: 20px solid #FF0000; }   
+  10%  { border: 5px solid #FF7F00; }   
+  20%  { border: 20px solid #FFFF00; }  
+  30%  { border: 5px solid #7FFF00; } 
+  40%  { border: 20px solid #00FF00; } 
+  50%  { border: 5px solid #00FFFF; }   
+  60%  { border: 20px solid #0000FF; }  
+  70%  { border: 5px solid #4B0082; }
+  80%  { border: 20px solid #8B00FF; } 
+  90%  { border: 5px solid #FF1493; }  
+  100% { border: 20px solid #FF0000; }
+    
+}
 .caixa {
 
-            border: 10px solid; 
-            padding: 15px;
+            border: none; 
+            padding: 10px;
             width: 150px;
-            margin: 100px auto;
+            margin: 50px auto;
             text-align: center;
-            background-color:rgb(255, 255, 255);
-            border-radius: 5px;
-            animation: rgb 2s infinite;
+            background-color:none;
             
             
-        }
-            
-        
-        
-        @keyframes rgb {
-            0% {border-color: rgb(255, 255, 255);}
-            50% {border-color: rgb(0, 0, 0);}
-            100% {border-color: rgb(255, 255, 255);}
-        
             
         }
        
 
         .botao1 {
 
-            padding:5px 10px;
+            padding:10px 15px;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             font-size: 30px;
             cursor: pointer;
@@ -50,7 +68,7 @@
 
         .botao2 {
 
-            padding:5px 10px;
+            padding:10px 15px;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             font-size: 30px;
             cursor: pointer;
@@ -70,7 +88,7 @@
             
         }  
         .botao3 {
-            padding: 5px 10px;
+            padding:10px 15px;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             font-size: 30px;
             cursor: pointer;
@@ -89,3 +107,103 @@
             background-color: rgb(0, 0, 0);
             color: white;
         }
+
+
+.caixa2{
+
+    margin: auto;
+    text-align: center;
+    align-content: center;
+    transition: .30s ease;
+
+}
+
+
+.botao4 {
+    
+
+    padding: 5px;
+    width: 100px;
+    height: 50px;
+    background: rgb(252, 107, 131);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size:30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    transition: .30s ease;
+    
+}
+.botao4:hover {
+    cursor: pointer;
+    width: 150px; 
+    height: 60px;
+    background-color: rgb(255, 123, 145);
+}
+.caixa2:has(.botao4:hover) .botao5,
+.caixa2:has(.botao4:hover) .botao6{
+    filter: blur(1px);
+    background-color: rgb(221, 72, 97) ;
+}
+
+
+
+
+.botao5{
+
+    
+    padding: 5px;
+    width: 100px;
+    height: 50px;
+    background: rgb(252, 107, 131);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size:30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    transition: .50s ease;
+
+}
+.botao5:hover {
+
+    height: 60px;
+    cursor: pointer;
+    width: 150px;
+    background-color: rgb(255, 123, 145);
+}
+.caixa2:has(.botao5:hover) .botao4,
+.caixa2:has(.botao5:hover) .botao6{
+    filter: blur(1px);
+    background-color: rgb(221, 72, 97) ;
+}
+
+
+
+
+.botao6{
+
+    
+    padding: 5px;
+    width: 100px;
+    height: 50px;
+    background: rgb(252, 107, 131);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size:30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    transition: .30s ease;
+
+}
+.botao6:hover{ 
+    cursor: pointer;
+    width: 150px;
+    height: 60px;
+    background-color: rgb(255, 123, 145);
+    
+}
+.caixa2:has(.botao6:hover) .botao4,
+.caixa2:has(.botao6:hover) .botao5{
+    filter: blur(1px);
+    background-color: rgb(221, 72, 97) ;
+}
