@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste de Botões</title>
     <link rel="stylesheet" href="style.css">
-    <script src="scripts.js"></script>
 </head> 
 
 <body>
@@ -14,10 +13,15 @@
     <div class="borda">
 </div>
 
+<div class="fixo"></div>
 
 
-<div class="fundo" id="fundo">
-    <button class="tema" id="idTema" onclick="tema()">TEMA</button>
+
+
+<div class="caixa0">
+    <button class="botao0" onclick="alert('botão 0')">PLAY</button>
+    <button class="botao0" onclick="alert('botão 0')">CONFIG</button>
+    <button class="botao0" onclick="alert('botão 0')">ABOUT</button>
 </div>
     
 
@@ -37,6 +41,39 @@
     <button class="botao4" onclick="alert('botão 4')">PLAY</button>
     <button class="botao5" onclick="alert('botão 5')">CONFIG</button>
     <button class="botao6" onclick="alert('botão 6')">ABOUT</button>
+</div>
+
+<audio id="somHover" src="tropa.ogg" preload="auto"></audio>
+
+<div class="caixa3">
+    <button class="botaogo"
+        onmouseenter="tocarSom(); mudarFundo(true)"
+        onmouseleave="pararSom(); mudarFundo(false)"
+        onclick="console.log('botão 7')">PLAY</button>
+    <button class="botao7" onclick="alert('botão 8')">CONFIG</button>
+    <button class="botao7" onclick="alert('botão 9')">ABOUT</button>
+    <button class="botao7" onclick="alert('botão 10')">EXIT</button>
+</div>
+
+ <script>
+
+    
+    const som = document.getElementById("somHover");
+
+    function tocarSom() {
+      som.currentTime = 0;
+      som.play().catch((e) => {
+        console.warn("Interação do usuário necessária para tocar som.");
+      });
+    }
+
+    function pararSom() {
+      som.pause();
+      som.currentTime = 0;
+    }
+
+
+  </script>
 
 </body>
 </html>

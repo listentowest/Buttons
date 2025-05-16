@@ -1,4 +1,51 @@
 
+.fixo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  margin: 0;
+
+  background: linear-gradient(
+    45deg,
+    #000000 0%,
+    #0a0a0a 5%,
+    #111111 10%,
+    #151515 15%,
+    #1a1a1a 20%,
+    #1f1f1f 25%,
+    #242424 30%,
+    #2a2a2a 35%,
+    #2f2f2f 40%,
+    #333333 45%,
+    #2f2f2f 50%,
+    #2a2a2a 55%,
+    #242424 60%,
+    #1f1f1f 65%,
+    #1a1a1a 70%,
+    #151515 75%,
+    #111111 80%,
+    #0a0a0a 85%,
+    #050505 90%,
+    #000000 100%
+  );
+
+  background-size: 500% 500%;
+  background-attachment: fixed;
+  animation: preto 10s ease-in-out infinite;
+  transition: background-position ease 0.5s;
+}
+
+@keyframes preto {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+    
+
 
 .borda {
   position: fixed;      
@@ -27,31 +74,43 @@
  
 }
 
-.fundo{
-    
-    text-align: center;
-    margin: 25px;
+.caixa0{
+    border: none; 
+    padding: 1px 10px;
+    width: 100px;
+    margin: 40px auto;
+    margin-bottom: 1%;
+    text-align: start;
+    background-color:rgba(0, 0, 255, 0);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
             
 }
-.tema{
-    
-    width: 70px;
+.botao0{
+
+    padding:1px;
+    width: 100px;
     height: 30px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
-    background-color: #8af0f0;
+    background-color: #888ae6;
     color: white;
-    border: 3px solid #78d1d1;
-    transition: .2s ease-in-out;
+    border: 2px solid #4c4d9b;
+    transition: .2s ease;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 0px;
+    
     
 
 }
-.tema:hover{
+.botao0:hover{
     cursor: pointer;
-    width: 50%;
-    height: 30px;
-    animation: tema 1s linear infinite, borda 1s linear infinite;
+    animation: tema 5s linear infinite, borda 5s linear infinite, sombra 5s linear infinite;
     color: rgb(133, 133, 133);
+    margin-left: 10px;
+    filter: drop-shadow( #888ae6 -5px 3px 0px);
 }
 
 @keyframes tema {
@@ -80,12 +139,25 @@
   90%  { background-color: #FFB3D9; }
   100% { background-color: #FFB3B3; }
 }
+@keyframes sombra {
+  0%   {filter: drop-shadow( #FFB3B3 -5px 3px 2px);}
+  10%  {filter: drop-shadow( #ffd1a300 -5px 3px 2px);}
+  20%  {filter: drop-shadow( #FFFFB3 -5px 3px 2px);}
+  30%  {filter: drop-shadow( #d3ffb200 -5px 3px 2px);}
+  40%  {filter: drop-shadow( #B3FFCC -5px 3px 2px);}
+  50%  {filter: drop-shadow( #b3ffff00 -5px 3px 2px);}
+  60%  {filter: drop-shadow( #B3C6FF -5px 3px 2px);}
+  70%  {filter: drop-shadow( #c6b3ff00 -5px 3px 2px);}
+  80%  {filter: drop-shadow( #E0B3FF -5px 3px 2px);}
+  90%  {filter: drop-shadow( #ffb3d900 -5px 3px 2px);}
+  100% {filter: drop-shadow( #FFB3B3 -5px 3px 2px);}
+}
 .caixa {
 
             border: none; 
             padding: 10px;
             width: 150px;
-            margin: 10px auto;
+            margin: 15px auto;
             text-align: center;
             background-color:none;
             
@@ -106,17 +178,13 @@
             border-radius: 10px;
             transform: scale(1);
             transition: transform 0.1s ease-in, background-color 0.4s ease, color 0.4s ease;
-            
+
         }
         .botao1:hover {
 
             background-color: rgb(255, 151, 238);
             transform: scale(1.2) rotate(5deg);
             color: rgb(255, 255, 255);
-            
-
-          
-            
         }
 
         .botao2 {
@@ -164,7 +232,7 @@
 
 .caixa2{
 
-    margin: auto;
+    margin:auto;
     text-align: center;
     align-content: center;
     transition: .30s ease;
@@ -184,7 +252,8 @@
     border-radius: 3px;
     font-size:30px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    transition: .30s ease;
+    transition: .50s ease;
+    
     
 }
 .botao4:hover {
@@ -192,6 +261,7 @@
     width: 150px; 
     height: 60px;
     background-color: rgb(255, 123, 145);
+    filter: drop-shadow(rgb(204, 80, 101) 0px 0px 1px);
 }
 .caixa2:has(.botao4:hover) .botao5,
 .caixa2:has(.botao4:hover) .botao6{
@@ -223,6 +293,7 @@
     cursor: pointer;
     width: 150px;
     background-color: rgb(255, 123, 145);
+    filter: drop-shadow(rgb(204, 80, 101) 0px 0px 1px);
 }
 .caixa2:has(.botao5:hover) .botao4,
 .caixa2:has(.botao5:hover) .botao6{
@@ -245,7 +316,7 @@
     border-radius: 3px;
     font-size:30px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    transition: .30s ease;
+    transition: .50s ease;
 
 }
 .botao6:hover{ 
@@ -253,10 +324,121 @@
     width: 150px;
     height: 60px;
     background-color: rgb(255, 123, 145);
+    filter: drop-shadow(rgb(204, 80, 101) 0px 0px 1px);
     
 }
 .caixa2:has(.botao6:hover) .botao4,
 .caixa2:has(.botao6:hover) .botao5{
     filter: blur(1px);
     background-color: rgb(221, 72, 97) ;
+}
+
+.caixa3{
+    padding: 50px 50px;
+    width: 100px;
+    height: 300px;
+    margin: 40px auto;
+    text-align: center;
+    background-color: #8cf88c;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+    filter: drop-shadow( #3eff3e 0px 0px 10px );
+    animation: shadow 10s ease infinite;
+}
+@keyframes shadow {
+  0%      {filter: drop-shadow( #6fd46f00 0px 0px 10px );}
+  12.50%  {filter: drop-shadow( #00ff00 0px 0px 10px );}   
+  25.00%  {filter: drop-shadow( #6fd46f00 0px 0px 10px );}   
+  37.50%  {filter: drop-shadow( #00ff00 0px 0px 10px );}    
+  50.00%  {filter: drop-shadow( #6fd46f00 0px 0px 10px );}   
+  62.50%  {filter: drop-shadow( #00ff00 0px 0px 10px );}    
+  75.00%  {filter: drop-shadow( #6fd46f00 0px 0px 10px );} 
+  87.50%  {filter: drop-shadow( #00ff00 0px 0px 10px );}   
+  100.00% {filter: drop-shadow( #6fd46f00 0px 0px 10px );} 
+ 
+ 
+}
+@keyframes fire {
+  0%   {filter: drop-shadow( #FFB3B3 0px 0px 20px);}
+  10%  {filter: drop-shadow( #ffd1a300 0px 0px 20px);}
+  20%  {filter: drop-shadow( #FFFFB3 0px 0px 20px);}
+  30%  {filter: drop-shadow( #d3ffb200 0px 0px 20px);}
+  40%  {filter: drop-shadow( #B3FFCC 0px 0px 20px);}
+  50%  {filter: drop-shadow( #b3ffff00 0px 0px 20px);}
+  60%  {filter: drop-shadow( #B3C6FF 0px 0px 20px);}
+  70%  {filter: drop-shadow( #c6b3ff00 0px 0px 20px);}
+  80%  {filter: drop-shadow( #E0B3FF 0px 0px 20px);}
+  90%  {filter: drop-shadow( #ffb3d900 0px 0px 20px);}
+  100% {filter: drop-shadow( #FFB3B3 0px 0px 20px);}
+}
+@keyframes alert {
+  0%   { background-color: #FFB3B3; }
+  10%  { background-color: #FFD1A3; }
+  20%  { background-color: #FFFFB3; }
+  30%  { background-color: #D4FFB2; }
+  40%  { background-color: #B3FFCC; }
+  50%  { background-color: #B3FFFF; }
+  60%  { background-color: #B3C6FF; }
+  70%  { background-color: #C6B3FF; }
+  80%  { background-color: #E0B3FF; }
+  90%  { background-color: #FFB3D9; }
+  100% { background-color: #FFB3B3; }
+}
+
+
+.botao7 {
+    background-color: rgb(255, 255, 255);
+    border: 5px solid rgb(123, 212, 163);
+    border-radius: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    color: rgb(114, 226, 164);
+    transition: .1s ease;
+}
+.botao7:hover {
+    transform: scale(130%);
+    border: 5px solid transparent;
+    background-color: transparent;
+    color: white;
+}
+.botaogo {
+    background-color: rgb(255, 255, 255);
+    border: 5px solid rgb(123, 212, 163);
+    border-radius: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    color: rgb(114, 226, 164);
+    transition: .1s ease;
+    
+}
+.botaogo:hover {
+    transform: scale(200%);
+    border: 5px solid transparent;
+    background-color: transparent;
+    color: white;
+}
+.caixa3:has(.botaogo:hover).caixa3:hover
+{
+    animation: fire 1s ease infinite, alert 1s ease infinite, scale 1605ms ease infinite;
+    background-color: transparent;
+    color: transparent;
+
+
+}
+
+
+@keyframes scale {
+    0% {scale: 90%;}
+    12%{scale: 110%;}
+    25% {scale: 90%;}
+    37%{scale: 110%;}
+    50% {scale: 90%;}
+    62%{scale: 150%;}
+    75% {scale: 90%;}
+    87%{scale: 110%;}
+    100% {scale: 90%;}
+    
 }
